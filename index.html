@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript - 23-24</title>
+	<script data-main="js/main" src="js/require.js"></script>
+	<!-- <script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/tmpl.js"></script>
+	<script src="js/model.js"></script>
+	<script src="js/view.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/script.js" defer></script> -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="wrapper">
+
+		<h1>Список задач:</h1>
+		<ul class="todo__list"></ul>
+		<div class="todo__add-tools">
+			<input type="text" value="" class="todo__input">
+			<input type="button" value="Добавить" class="todo__btn">
+		</div>
+
+	</div>
+
+	<script type="text/html" id="todo_template">
+		<% for ( var i = 0; i < data.length; i++ ) { %>
+		<li class="todo__item">
+			<span class="todo__text">
+				<span class="todo__number"><%= i+1 %>.</span>
+				<%= data[i] %>
+			</span>
+			<span class="todo__edit-btn" title="Изменить"></span>
+			<div class="todo__tools">
+				<input type="text" class="todo__text-edit" value="<%= data[i] %>" id="val_<%= i %>">
+				<input type="button" value="Сохранить" class="todo__save-btn" data-index="<%= i %>">
+			</div>	
+		</li>
+		<% } %>
+	</script>
+
+</body>
+</html>

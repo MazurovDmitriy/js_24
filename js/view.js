@@ -1,0 +1,23 @@
+function View(model) {
+  var self = this;
+  
+  function init() {
+    self.elements = {
+      input: $('.todo__input'),
+      addBtn: $('.todo__btn'),
+      saveBtnClass: 'todo__save-btn',
+      editBtnClass: 'todo__edit-btn',
+      listContainer: $('.todo__list'),
+      listTemplate: $('#todo_template')
+    };
+    self.renderList(model.data);
+  }
+
+  self.renderList = function (data) {
+    var list = tmpl('todo_template', {data: data});
+    //console.log(list);
+    self.elements.listContainer.html(list);
+  }
+
+  init();
+}
