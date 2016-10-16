@@ -33,6 +33,7 @@
 				<%= data[i] %>
 			</span>
 			<span class="todo__edit-btn" title="Изменить"></span>
+			<span class="todo__del-btn" title="Удалить" data-index="<%= i %>"></span>
 			<div class="todo__tools">
 				<input type="text" class="todo__text-edit" value="<%= data[i] %>" id="val_<%= i %>">
 				<input type="button" value="Сохранить" class="todo__save-btn" data-index="<%= i %>">

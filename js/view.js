@@ -7,6 +7,7 @@ function View(model) {
       addBtn: $('.todo__btn'),
       saveBtnClass: 'todo__save-btn',
       editBtnClass: 'todo__edit-btn',
+      delBtnClass: 'todo__del-btn',
       listContainer: $('.todo__list'),
       listTemplate: $('#todo_template')
     };
@@ -15,7 +16,6 @@ function View(model) {
 
   self.renderList = function (data) {
     var list = tmpl('todo_template', {data: data});
-    //console.log(list);
     self.elements.listContainer.html(list);
   }
 
